@@ -1,24 +1,35 @@
 "use client"
+import { useState } from "react";
 import { motion } from "framer-motion";
-
+import { Input } from "./components/Input";
+import "./style.css";
 
 export default function Home() {
-  return <div style={{
-    backgroundColor:'red'
-  }}> hello and welcome to Olalekan Abdulfatah Portfolio
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+  const [rotate, setRotate] = useState(0)
+  return <div> hello and welcome to Olalekan Abdulfatah Portfolio
 
-<motion.div
-    initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}
-  />
-   <motion.div
-    animate={{
-      scale: [1, 2, 2, 1, 1],
-      rotate: [0, 0, 270, 270, 0],
-      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-    }}
-  />
-
+<div>
+        <motion.div
+          className="box"
+          animate={{ x, y, rotate }}
+          transition={{ type: "spring" }}
+          initial={{
+            x:x+100, y:y+200, rotate:rotate+100 
+          }}
+        />
+      </div>
+      <div className="inputs">
+        <Input value={x} set={setX}>
+          x
+        </Input>
+        <Input value={y} set={setY}>
+          yfdf
+        </Input>
+        <Input value={rotate} set={setRotate} min={-180} max={180}>
+          rotate
+        </Input>
+      </div>
   </div>
 }
