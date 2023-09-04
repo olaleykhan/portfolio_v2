@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div>The about us main page </div>
+    <div>The about us main page second line </div>
   )
 }
 
