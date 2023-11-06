@@ -16,7 +16,7 @@ const BaseCanvas: React.FC<Props> = ({children}) => {
     width: '100%',
     height: '100%'
   }} >
-     <Canvas >
+     <Canvas shadows >
     {children}
    </Canvas>
   </Box>
